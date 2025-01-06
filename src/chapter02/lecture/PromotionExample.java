@@ -33,5 +33,14 @@ public class PromotionExample {
         // 8 byte
         double doubleValue = floatValue;
         System.out.println("doubleValue = " + doubleValue); // soutv
+
+        byte a = 10;
+        byte b = 20;
+        // byte + byte = int 자료형, short + short = int 자료형
+        byte c = (byte) (a + b);
+        // 변수가 아닌 정수형 리터럴로 입력하면 RightValue가 byte형으로 반환하도록 컴파일러가 자동 수행
+        c = 10 + 20;
+
+        System.out.println("c = " + c);
     }
 }
