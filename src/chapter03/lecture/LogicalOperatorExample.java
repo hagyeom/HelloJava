@@ -17,7 +17,7 @@ public class LogicalOperatorExample {
         }
 
         // 0 ~ 9
-        if (charCode >= 48 && charCode <= 57) {
+        if (!(charCode < 48) && !(charCode > 57)) { // 48보다 크거나 같고 57보다 작거나 같다, 48보다 작지 않고 57보다 크지 않다
             System.out.println("0 ~ 9 숫자군요.");
         }
 
