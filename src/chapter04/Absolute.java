@@ -14,12 +14,12 @@ public class Absolute {
         // if(조건식) {실행문}
         // else(조건식) {실행문}
 
-        if (n > 0) {
+        if (n >= 0) { // 양의 정수
             abs = n;
-        } else {
+        } else { // 음의 정수
             abs = -n;
         }
-        
+
         System.out.println("절대값은 " + abs + "입니다.");
     }
 }
