@@ -12,7 +12,7 @@ public class SearchString {
         System.out.print("문자열 s2:");
         String s2 = sc.next();
 
-        // s1이 s2에 포함되어 있는가? 포함되어 있으면 그 시작 위치는?
+        // s1 안에 s2가 포함되어 있는가? 포함되어 있으면 그 시작 위치는?
         int idx = s1.indexOf(s2); // fullStr 기준으로 .indexOf() 호출
 
         // idx == -1 인 경우는 못 찾았을 때
