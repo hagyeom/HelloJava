@@ -24,3 +24,4 @@ public enum Week {
 //      - Week 열거형 클래스 자체는 메소드 영역에 로드됨
 // 4. Week.valueOf("Monday")를 호출하면 "MONDAY"라는 이름에 해당하는 상수를 반환
 //      - 유효하지 않은 이름을 전달하면 IllegalArgumentException이 발생
+
