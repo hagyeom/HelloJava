@@ -1,5 +1,7 @@
 package practice.example.entity;
 
+import java.util.Objects;
+
 public class Seat {
     private long id; // 좌석 번호
 
@@ -10,6 +12,13 @@ public class Seat {
         this.description = id + "번 좌석";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Seat seat)) return false;
+        
+        return id == seat.id;
+    }
 
     @Override
     public String toString() {
