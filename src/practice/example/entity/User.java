@@ -1,8 +1,29 @@
 package practice.example.entity;
 
+import practice.example.entity.base.BaseEntity;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public class User {
+public class User extends BaseEntity {
+
+    private static long counter = 0;
+
+    public static final List<User> USER_LIST = new ArrayList<>();
+
+    static {
+        USER_LIST.add(new User("홍길동", "010-0000-0001"));
+        USER_LIST.add(new User("나영희", "010-0000-0002"));
+        USER_LIST.add(new User("김철수", "010-0000-0003"));
+        USER_LIST.add(new User("김영수", "010-0000-0004"));
+    }
+
+
+    {
+        this.id = ++counter;
+    }
+
     private String name;
 
     private String phoneNumber;

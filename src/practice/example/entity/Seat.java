@@ -1,9 +1,25 @@
 package practice.example.entity;
 
+import practice.example.entity.base.BaseEntity;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
-public class Seat {
-    private long id; // 좌석 번호
+public class Seat extends BaseEntity {
+
+    private static long counter = 0;
+
+    public static final List<Seat> SEAT_LIST = new ArrayList<>();
+
+    private static final int numberOfSeats = 20;
+
+    static {
+        for (int i = 1; i <= numberOfSeats; i++) {
+            SEAT_LIST.add(new Seat(i));
+        }
+    }
+
 
     private String description; // 설명
 
@@ -16,7 +32,7 @@ public class Seat {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Seat seat)) return false;
-        
+
         return id == seat.id;
     }
 
@@ -26,5 +42,10 @@ public class Seat {
                 "id=" + id +
                 ", description='" + description + '\'' +
                 '}';
+    }
+
+
+    public String getDescription() {
+        return description;
     }
 }
