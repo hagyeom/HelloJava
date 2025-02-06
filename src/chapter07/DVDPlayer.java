@@ -103,7 +103,7 @@ public class DVDPlayer implements Player {
                 isPlaying = false;
                 System.out.println(currentDVD + " DVD 재생이 중지되었습니다.");
             } else {
-                System.out.println(currentDVD + " DVD 재생이 이미 중지되었 있습니다.");
+                System.out.println(currentDVD + " DVD 재생이 이미 중지되어 있습니다.");
             }
         } else {
             System.out.println("DVD 플레이어 전원이 꺼져 있습니다. 면저 전원을 켜주세요.");
