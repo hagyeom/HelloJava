@@ -1,7 +1,6 @@
 package chapter07;
 
 public class DVDPlayer implements Player {
-    // 필드: 전원 상태, 재생 상태, 현재 삽입된 dvd,볼륨,현재재생시간,총 재생시간
 
     private boolean isOn; // 전원 상태 (켜져 있는지)
     private boolean isPlaying; // 재생 상태
@@ -11,7 +10,6 @@ public class DVDPlayer implements Player {
 
 
     // 생성자
-
     public DVDPlayer() {
         this.isOn = false;
         this.isPlaying = false;
