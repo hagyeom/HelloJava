@@ -52,7 +52,7 @@ public class DVDPlayer implements Player {
                 currentDVD = dvdTitle;
                 this.totalTime = totalTime; // getter랑 setter 메서드 사용?
                 currentTime = 0;
-                System.out.println(dvdTitle + " DVD가 삽입되었습니다. 총 재생시간은 " + totalTime + "입니다.");
+                System.out.println(dvdTitle + " DVD가 삽입되었습니다. 총 재생시간은 " + totalTime + "초입니다.");
             } else {
                 System.out.println("이미 " + currentDVD + " DVD가 삽입되었습니다.");
             }
@@ -109,5 +109,5 @@ public class DVDPlayer implements Player {
             System.out.println("DVD 플레이어 전원이 꺼져 있습니다. 면저 전원을 켜주세요.");
         }
     }
-    
+
 }
