@@ -1,5 +1,6 @@
 package practice.vehicle;
 
+// 자동차 클래스
 public class Car implements Vehicle {
     // 필드
     protected String name; // 이름
@@ -40,25 +41,25 @@ public class Car implements Vehicle {
     }
 
     public void setFuel(int fuel) {
-        if (fuel >= 0 && fuel <= 100) { // 연료는 0% ~ 100%.
+        if (fuel >= 0 && fuel <= 100) { // 연료는 0~100%
             this.fuel = fuel;
         }
     }
 
     @Override
-    public void move() { // 좀 더 어떻게 잘 구현해볼지 다시 생각.
+    public void move() {
         if (fuel > 0) {
             setSpeed(50);
-            setFuel(-10);
-            System.out.println(name + " 자동차가 " + getSpeed() + "km로 주행합니다.");
-        } else if (fuel <= 0) {
-            System.out.println("차가 주행할 수 없습니다.");
+            setFuel(-10); // 연료 직접 감소
+            System.out.println(name + " 자동차가 " + speed + "km/h로 주행합니다. 남은 연료: " + fuel + "%");
+        } else {
+            System.out.println("연료가 없어 차가 주행할 수 없습니다.");
         }
     }
 
     @Override
     public void stop() {
         setSpeed(0);
-        System.out.println("자동차가 주행이 멈췄습니다.");
+        System.out.println("자동차가 멈췄습니다.");
     }
 }
