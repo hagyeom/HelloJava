@@ -11,7 +11,6 @@ public class Car implements Vehicle {
 
 
     // 생성자
-
     public Car(String name, int speed, int fuel) {
         this.name = name;
         this.speed = speed;
@@ -20,8 +19,6 @@ public class Car implements Vehicle {
 
 
     // Getter와 Setter 메서드
-
-
     public String getName() {
         return name;
     }
