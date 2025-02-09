@@ -1,5 +1,6 @@
 package practice.vehicle;
 
+
 // 자동차 클래스
 public class Car implements Vehicle {
     // 필드
@@ -32,25 +33,39 @@ public class Car implements Vehicle {
     }
 
     public void setSpeed(int speed) {
-        if (speed >= 0) { // 속도는 음수가 될 수 없음.
+        try {
+            if (speed < 0) { // 속도는 음수가 될 수 없음.
+                throw new IllegalStateException("자동차의 속도는 음수가 될 수 없습니다.");
+            }
             this.speed = speed;
+
+        } catch (IllegalStateException e) {
+            System.out.println("예외 발생" + e.getMessage());
         }
     }
 
     public void setFuel(int fuel) {
-        if (fuel >= 0 && fuel <= 100) { // 연료는 0~100%
+        try {
+            if (fuel < 0 || fuel > 100) {
+                throw new IllegalArgumentException("연료 잔량이 0~100사이어야 합니다.");
+            }
             this.fuel = fuel;
+        } catch (IllegalArgumentException e) {
+            System.out.println("예외 발생 : " + e.getMessage());
         }
     }
 
     @Override
     public void move() {
-        if (fuel > 0) {
-            setSpeed(50);
+        try {
             setFuel(-10); // 연료 직접 감소
+            if (fuel <= 0) {
+                throw new IllegalArgumentException("연료가 없어서 주행할 수 없습니다.");
+            }
+            setSpeed(50);
             System.out.println(name + " 자동차가 " + speed + "km/h로 주행합니다. 남은 연료: " + fuel + "%");
-        } else {
-            System.out.println("연료가 없어 차가 주행할 수 없습니다.");
+        } catch (IllegalArgumentException e) {
+            System.out.println("예외 발생 : " + e.getMessage());
         }
     }
 

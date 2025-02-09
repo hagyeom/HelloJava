@@ -6,7 +6,7 @@ public class VehicleTest {
         // 각 차량 테스트
         Vehicle[] vehicles = {
                 new Bicycle(),
-                new Car("소나타", 0, 30),
+                new Car("소나타", 0, 50),
                 new Airplane("보잉747"),
                 new TeslaCar("Model S", 0, 50),
                 new GasCar("아반떼", 0, 40)
@@ -26,6 +26,6 @@ public class VehicleTest {
         tesla.move();
         tesla.chargeBattery();
         tesla.move();
-    
+
     }
 }

@@ -29,7 +29,14 @@ public class Bicycle implements Vehicle {
     }
 
     public void setSpeed(int speed) {
-        this.speed = speed;
+        try {
+            if (speed < 0) {
+                throw new IllegalStateException("자전거의 속도는 음수가 될 수 없습니다.");
+            }
+            this.speed = speed;
+        } catch (IllegalStateException e) {
+            System.out.println("예외발생 : " + e.getMessage());
+        }
     }
 
     @Override
