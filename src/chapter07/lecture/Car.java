@@ -5,10 +5,10 @@ public class Car {
 
     protected int numberOfDoor;
 
-    protected Car() {
+    public Car() {
     }
 
-    protected Car(int numberOfDoor) {
+    public Car(int numberOfDoor) {
         this.numberOfDoor = numberOfDoor;
     }
 
