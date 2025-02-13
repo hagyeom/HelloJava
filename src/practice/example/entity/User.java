@@ -19,13 +19,11 @@ public class User extends BaseEntity {
         USER_LIST.add(new User("김영수", "010-0000-0004"));
     }
 
-
     {
         this.id = ++counter;
     }
 
     private String name;
-
     private String phoneNumber;
 
     public User(String name, String phoneNumber) {
@@ -44,8 +42,14 @@ public class User extends BaseEntity {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof User user)) return false;
+        if (!(o instanceof User)) return false; // instanceof 패턴 매칭 제거
+        User user = (User) o; // 명시적인 캐스팅 사용
         return Objects.equals(name, user.name) && Objects.equals(phoneNumber, user.phoneNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, phoneNumber);
     }
 
     @Override
@@ -54,5 +58,4 @@ public class User extends BaseEntity {
                 "name='" + name + '\'' +
                 '}';
     }
-
 }

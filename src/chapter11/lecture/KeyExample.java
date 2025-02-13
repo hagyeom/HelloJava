@@ -12,9 +12,9 @@ class Key {
     @Override
     public final boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Key key)) return false;
+        if (!(o instanceof Key)) return false;
 
-        return number == key.number;
+        return number == ((Key) o).number;
     }
 
     @Override
